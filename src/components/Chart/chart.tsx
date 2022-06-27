@@ -41,17 +41,21 @@ const Chart = (props: Props) => {
             }
         },
         tooltip: {
-            trigger: 'axis',
+            trigger: "axis",
+            backgroundColor: "#292E4E",
+            textStyle: {
+                color: "white",
+            },
             formatter: (params:any) => {
                 return `Value: ${params[0].data} <br />  Date: ${params[0].axisValue}`
             }
         },
         xAxis: {
-            type: 'category',
+            type: "category",
             data: getXAxis
         },
         yAxis: {
-            type: 'category',
+            type: "category",
             data: chartData.length
                 ? chartData
                 : [...generateRandomData(1, 300)].sort((a:any,b:any) => +a.value - +b.value),
@@ -72,11 +76,11 @@ const Chart = (props: Props) => {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                         {
                             offset: 0,
-                            color: 'rgb(255, 0, 135)'
+                            color: 'rgb(240,66,255)'
                         },
                         {
                             offset: 1,
-                            color: 'rgb(135, 0, 157)'
+                            color: 'rgb(42,141,150)'
                         }
                     ])
                 },
